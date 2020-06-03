@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <form action="choice">
+        <label for="category" id='category'>Wybierz kategorie</label>
+        <input for='category' type='radio' name="category" value="colors" checked>colors
+        <input for='category' type='radio' name="category" value="animals">animals
+        <button class="choice" for='category'>wybierz kategorie</button>
+
+    </form>
+    <div class="draw__word">
+        <div class="draw__letter">o</div>
+        <div class="draw__letter">r</div>
+        <div class="draw__letter">a</div>
+        <div class="draw__letter">n</div>
+        <div class="draw__letter">g</div>
+        <div class="draw__letter">e</div>
+    </div>
+    <div class="letters">
+        <div data-letter="a">a</div>
+        <div data-letter="b">b</div>
+        <div data-letter="c">c</div>
+        <div data-letter="d">d</div>
+        <div data-letter="e">e</div>
+        <div data-letter="f">f</div>
+        <div data-letter="g">g</div>
+        <div data-letter="h">h</div>
+        <div data-letter="i">i</div>
+        <div data-letter="j">j</div>
+        <div data-letter="k">k</div>
+        <div data-letter="l">l</div>
+        <div data-letter="m">m</div>
+        <div data-letter="n">n</div>
+        <div data-letter="o">o</div>
+        <div data-letter="p">p</div>
+        <div data-letter="r">r</div>
+        <div data-letter="s">s</div>
+        <div data-letter="t">t</div>
+        <div data-letter="u">u</div>
+        <div data-letter="w">w</div>
+        <div data-letter="x">x</div>
+        <div data-letter="y">y</div>
+        <div data-letter="z">z</div>
+    </div>
+    <script src="script/main.js"></script>
+
+</body>
+
+</html>
