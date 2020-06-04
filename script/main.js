@@ -4,11 +4,12 @@ const btn = document.querySelector('form button');
 const colors = ['blue', 'red', 'white', 'orange'];
 const animals = ['cat', 'hamster', 'pig', 'sheep'];
 const fruits = ['apple', 'cherry', 'pear', 'banana'];
-const drawnWordArray = [];
+
 
 
 btn.addEventListener('click', function (e) {
     e.preventDefault();
+    drawWord.innerHTML = '';
     let selectedArray;
     const input = document.querySelector('input[type="radio"]:checked');
 
@@ -18,17 +19,26 @@ btn.addEventListener('click', function (e) {
         selectedArray = colors;
     } else if (input.value == 'animals') {
         selectedArray = animals;
-    } else if (input.value == 'fruit') {
+    } else if (input.value == 'fruits') {
         selectedArray = fruits;
     }
     // console.log(selectedArray)
 
-    //draw a words from the option(array)
+    //draw a words from the option(chosen array)
 
     let index = Math.floor(Math.random() * selectedArray.length);
     let color = selectedArray[index];
     // console.log(color);
 
+    // split chosen word to array and create divs icludes this letters in span
 
+    let arrayWithWord = color.split('');
+    arrayWithWord.forEach((letter) => {
+        const letterDiv = document.createElement('div');
+        drawWord.appendChild(letterDiv);
+        const spanLetter = document.createElement('span');
+        letterDiv.appendChild(spanLetter)
+        spanLetter.textContent = letter
+    })
 
 })
