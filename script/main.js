@@ -37,8 +37,19 @@ btn.addEventListener('click', function (e) {
         const letterDiv = document.createElement('div');
         drawWord.appendChild(letterDiv);
         const spanLetter = document.createElement('span');
-        letterDiv.appendChild(spanLetter)
-        spanLetter.textContent = letter
+        letterDiv.appendChild(spanLetter);
+        spanLetter.textContent = letter;
     })
 
+
+})
+
+// 
+
+let spans = drawWord.querySelectorAll('div span');
+lettersToChoice.forEach(item => {
+    item.addEventListener('click', function () {
+        console.log('dziala')
+
+    })
 })
