@@ -7,21 +7,25 @@
 body {
     min-height: 100vh;
     position: relative;
+    background-color: rgb(216, 211, 211);
 }
 
+
 form {
+    min-width: 600px;
+    padding-top: 5vh;
     width: 40vw;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     letter-spacing: 2px;
-    margin: 5vh auto;
+    margin: 0 auto 35vh;
     text-align: center;
     text-transform: uppercase;
 }
 
 form label {
     font-size: 34px;
-    color: #644536;
+    color: #663c26;
 
 
 }
@@ -40,7 +44,7 @@ form span {
 
 form button {
     margin-top: 4vh;
-    width: 55%;
+    width: 45%;
     height: 7vh;
     padding: 10px;
     font-size: 28px;
@@ -56,9 +60,32 @@ form button:hover {
     letter-spacing: 3px;
 }
 
+div.draw__word {
+    margin: 0 auto;
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+div.draw__word div {
+    /* flex-grow: 1; */
+    border-bottom: 3px solid darkgoldenrod;
+    border-radius: 5%;
+    text-align: center;
+    flex-basis: 10%;
+    /* background-color: darksalmon; */
+    font-size: 32px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+
+}
+
 div.letters {
     position: absolute;
-    top: 70%;
+    /* min-width: 600px; */
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
@@ -66,6 +93,7 @@ div.letters {
     width: 80vw;
     grid-column-gap: 7px;
     grid-row-gap: 7px;
+
 
 }
 
@@ -86,5 +114,5 @@ div.letters div {
 }
 
 .letters div:hover {
-    font-size: 29px;
+    font-size: 32px;
 }
