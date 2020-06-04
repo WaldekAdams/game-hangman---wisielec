@@ -4,7 +4,7 @@ const btn = document.querySelector('form button');
 const colors = ['blue', 'red', 'white', 'orange'];
 const animals = ['cat', 'hamster', 'pig', 'sheep'];
 const fruits = ['apple', 'cherry', 'pear', 'banana'];
-
+let arrayWithWord = [];
 
 
 btn.addEventListener('click', function (e) {
@@ -32,7 +32,7 @@ btn.addEventListener('click', function (e) {
 
     // split chosen word to array and create divs icludes this letters in span
 
-    let arrayWithWord = color.split('');
+    arrayWithWord = color.split('');
     arrayWithWord.forEach((letter) => {
         const letterDiv = document.createElement('div');
         drawWord.appendChild(letterDiv);
@@ -44,12 +44,35 @@ btn.addEventListener('click', function (e) {
 
 })
 
-// 
+// matching letters - if is true add class to letter in span/ add all chosen letters to 'checkArray'
 
-let spans = drawWord.querySelectorAll('div span');
+checkArray = [];
 lettersToChoice.forEach(item => {
     item.addEventListener('click', function () {
-        console.log('dziala')
+        // console.log('dziala')
+        let spans = drawWord.querySelectorAll('div span');
+        chosenLetter = item.dataset.letter;
+
+        spans.forEach(span => {
+            if (span.innerHTML.includes(chosenLetter)) {
+                span.classList.add('active')
+            }
+        })
+        checkArray.push(chosenLetter);
+        // console.log(checkArray);
+
+        // checking if the array 'checkArray' conteins all letters from the password word
+
+        let coompareArr = arrayWithWord.filter(e => checkArray.includes(e));
+        console.log(coompareArr);
+
+        if (coompareArr.join() === arrayWithWord.join() && arrayWithWord.join() != '') {
+            console.log('wygrana')
+
+        }
+
+
 
     })
+
 })

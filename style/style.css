@@ -84,8 +84,13 @@ div.draw__word div span {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    color: hotpink;
+    color: rgb(146, 101, 5);
+    display: none;
 
+}
+
+div.draw__word div span.active {
+    display: inline;
 }
 
 div.letters {
