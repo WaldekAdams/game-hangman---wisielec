@@ -4,12 +4,16 @@ const btn = document.querySelector('form button');
 const colors = ['blue', 'red', 'white', 'orange'];
 const animals = ['cat', 'hamster', 'pig', 'sheep'];
 const fruits = ['apple', 'cherry', 'pear', 'banana'];
+const counter = document.querySelector('div.counter span')
 let arrayWithWord = [];
+let score = 7;
 
-
+counter.textContent = score;
 btn.addEventListener('click', function (e) {
     e.preventDefault();
     drawWord.innerHTML = '';
+    coompareArr = [];
+    score = 7;
     let selectedArray;
     const input = document.querySelector('input[type="radio"]:checked');
 
@@ -54,8 +58,9 @@ lettersToChoice.forEach(item => {
         chosenLetter = item.dataset.letter;
 
         spans.forEach(span => {
-            if (span.innerHTML.includes(chosenLetter)) {
-                span.classList.add('active')
+            if (span.innerHTML.includes(chosenLetter) && !checkArray.includes(chosenLetter)) {
+                span.classList.add('active');
+                score++;
             }
         })
         checkArray.push(chosenLetter);
@@ -65,12 +70,16 @@ lettersToChoice.forEach(item => {
 
         let coompareArr = arrayWithWord.filter(e => checkArray.includes(e));
         console.log(coompareArr);
+        score--;
+        counter.textContent = score;
 
         if (coompareArr.join() === arrayWithWord.join() && arrayWithWord.join() != '') {
             console.log('wygrana')
 
+        } else if (score === 0) {
+            console.log('przegrana')
         }
-
+        console.log(score)
 
 
     })
