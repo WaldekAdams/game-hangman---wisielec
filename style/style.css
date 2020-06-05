@@ -85,12 +85,12 @@ div.draw__word div span {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     color: rgb(146, 101, 5);
-    display: none;
-
+    opacity: 0;
+    transition: 0.3s;
 }
 
 div.draw__word div span.active {
-    display: inline;
+    opacity: 1;
 }
 
 div.letters {
@@ -126,4 +126,20 @@ div.letters div {
 
 .letters div:hover {
     font-size: 32px;
+}
+
+div.counter {
+    width: 30vh;
+    /* height: 5vh; */
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: lightblue;
+
 }
