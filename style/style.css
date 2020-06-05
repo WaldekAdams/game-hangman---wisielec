@@ -124,6 +124,17 @@ div.letters div {
     transition: 0.2s;
 }
 
+div.letters div.clicked {
+    background-color: rgb(240, 231, 217);
+    color: rgb(80, 78, 78);
+    opacity: 0.9;
+    font-size: 24px;
+}
+
+div.letters div.click:hover {
+    opacity: 0.8;
+}
+
 .letters div:hover {
     font-size: 32px;
 }
@@ -142,4 +153,32 @@ div.counter {
     text-transform: uppercase;
     background-color: lightblue;
 
+}
+
+div.show {
+    background-color: rgb(100, 149, 237, 0.9);
+    position: absolute;
+    top: 55%;
+    left: -50%;
+    transform: translate(-50%, 0);
+    transition: 0.9s;
+    text-align: center;
+    z-index: 1;
+    width: 85vw;
+    height: 35vh;
+}
+
+div.show.run {
+    left: 50%;
+}
+
+div.show__result {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 98px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
