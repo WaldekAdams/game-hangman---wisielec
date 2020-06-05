@@ -62,8 +62,6 @@ btn.addEventListener('click', function (e) {
 // matching letters - if is true add class to letter in span/ add all chosen letters to 'checkArray'
 
 
-
-
 lettersToChoice.forEach(item => {
     item.addEventListener('click', function () {
         // console.log('dziala')
@@ -74,16 +72,19 @@ lettersToChoice.forEach(item => {
         spans.forEach(span => {
             if (span.innerHTML.includes(chosenLetter)) {
                 span.classList.add('active');
-                score++;
+
             }
         })
+        if (arrayWithWord.includes(chosenLetter) && !coompareArr.includes(chosenLetter)) {
+            console.log('zgadza sie');
+            score++;
+        }
         checkArray.push(chosenLetter);
-        // console.log(checkArray);
 
         // checking if the array 'checkArray' conteins all letters from the password word
 
         coompareArr = arrayWithWord.filter(e => checkArray.includes(e));
-        console.log(coompareArr);
+        // console.log(coompareArr);
         score--;
         counter.textContent = score;
 
@@ -96,7 +97,7 @@ lettersToChoice.forEach(item => {
             show.classList.add('run');
             spans.forEach(span => span.classList.add('active'))
         }
-        console.log(score)
+        // console.log(score)
     })
 
 })
