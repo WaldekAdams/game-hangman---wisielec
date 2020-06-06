@@ -63,7 +63,6 @@ btn.addEventListener('click', function (e) {
 
 // matching letters - if is true add class to letter in span/ add all chosen letters to 'checkArray'
 
-console.log('huj')
 lettersToChoice.forEach(item => {
     item.addEventListener('click', function () {
         // console.log('dziala')

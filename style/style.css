@@ -15,7 +15,7 @@ form {
     min-width: 600px;
     padding-top: 5vh;
     width: 40vw;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Architects Daughter', cursive;
     font-size: 24px;
     letter-spacing: 2px;
     margin: 0 auto 35vh;
@@ -26,6 +26,7 @@ form {
 form label {
     font-size: 34px;
     color: #663c26;
+    font-weight: bold;
 
 
 }
@@ -38,7 +39,6 @@ form input {
 
 form span {
     color: #114B5F;
-    font-weight: bold;
 
 }
 
@@ -80,9 +80,9 @@ div.draw__word div {
 }
 
 div.draw__word div span {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Piedra', cursive;
     text-transform: uppercase;
     color: rgb(146, 101, 5);
     opacity: 0;
@@ -146,13 +146,18 @@ div.counter {
     bottom: 2%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Architects Daughter', cursive;
     font-size: 24px;
     line-height: 44px;
     text-align: center;
     text-transform: uppercase;
     background-color: lightblue;
 
+}
+
+div.counter span {
+    font-weight: bold;
+    font-size: 28px;
 }
 
 div.show {
@@ -173,7 +178,7 @@ div.show.run {
 }
 
 div.show__text {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Piedra', cursive;
     font-size: 88px;
     letter-spacing: 6px;
     text-transform: uppercase;
