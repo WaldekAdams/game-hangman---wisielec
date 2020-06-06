@@ -12,10 +12,12 @@ let arrayWithWord = [];
 let checkArray = [];
 let coompareArr = [];
 let score = 7;
+let flag = false;
 
 counter.textContent = score;
 btn.addEventListener('click', function (e) {
     e.preventDefault();
+    flag = true;
     drawWord.innerHTML = '';
     coompareArr = [];
     checkArray = [];
@@ -38,7 +40,7 @@ btn.addEventListener('click', function (e) {
         selectedArray = fruits;
     }
     // console.log(selectedArray)
-
+    console.log(flag)
     //draw a words from the option(chosen array)
 
     let index = Math.floor(Math.random() * selectedArray.length);
@@ -61,43 +63,45 @@ btn.addEventListener('click', function (e) {
 
 // matching letters - if is true add class to letter in span/ add all chosen letters to 'checkArray'
 
-
+console.log('huj')
 lettersToChoice.forEach(item => {
     item.addEventListener('click', function () {
         // console.log('dziala')
-        item.classList.add('clicked')
-        let spans = drawWord.querySelectorAll('div span');
-        chosenLetter = item.dataset.letter;
+        if (flag == true) {
+            item.classList.add('clicked')
+            let spans = drawWord.querySelectorAll('div span');
+            chosenLetter = item.dataset.letter;
 
-        spans.forEach(span => {
-            if (span.innerHTML.includes(chosenLetter)) {
-                span.classList.add('active');
+            spans.forEach(span => {
+                if (span.innerHTML.includes(chosenLetter)) {
+                    span.classList.add('active');
 
+                }
+            })
+            if (arrayWithWord.includes(chosenLetter) && !coompareArr.includes(chosenLetter)) {
+                console.log('zgadza sie');
+                score++;
             }
-        })
-        if (arrayWithWord.includes(chosenLetter) && !coompareArr.includes(chosenLetter)) {
-            console.log('zgadza sie');
-            score++;
+            checkArray.push(chosenLetter);
+
+            // checking if the array 'checkArray' conteins all letters from the password word
+
+            coompareArr = arrayWithWord.filter(e => checkArray.includes(e));
+            // console.log(coompareArr);
+            score--;
+            counter.textContent = score;
+
+            if (coompareArr.join() === arrayWithWord.join() && arrayWithWord.join() != '') {
+                showText.textContent = 'you win!!!';
+                show.classList.add('run');
+
+            } else if (score === 0) {
+                showText.textContent = 'you losse!!!';
+                show.classList.add('run');
+                spans.forEach(span => span.classList.add('active'))
+            }
+            // console.log(score)
         }
-        checkArray.push(chosenLetter);
-
-        // checking if the array 'checkArray' conteins all letters from the password word
-
-        coompareArr = arrayWithWord.filter(e => checkArray.includes(e));
-        // console.log(coompareArr);
-        score--;
-        counter.textContent = score;
-
-        if (coompareArr.join() === arrayWithWord.join() && arrayWithWord.join() != '') {
-            showText.textContent = 'you win!!!';
-            show.classList.add('run');
-
-        } else if (score === 0) {
-            showText.textContent = 'you losse!!!';
-            show.classList.add('run');
-            spans.forEach(span => span.classList.add('active'))
-        }
-        // console.log(score)
     })
 
 })

@@ -161,7 +161,7 @@ div.show {
     top: 55%;
     left: -50%;
     transform: translate(-50%, 0);
-    transition: 0.5s;
+    transition: 0.4s;
     text-align: center;
     z-index: 1;
     width: 85vw;
