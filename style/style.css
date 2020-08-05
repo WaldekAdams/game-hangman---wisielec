@@ -185,7 +185,7 @@ div.show__text {
     transform: translate(-50%, -50%);
 }
 
-@media(max-width:360px) {
+@media(max-width:600px) {
     form {
         min-width: 80vw;
         margin: 0 auto 5vh;
@@ -204,7 +204,7 @@ div.show__text {
 
     div.draw__word {
         position: absolute;
-        top: 55%;
+        top: 52%;
         left: 0;
         width: 100vw;
     }
@@ -222,13 +222,15 @@ div.show__text {
     div.counter {
         transform: translate(-50%, -10%);
         font-size: 20px;
-        line-height: 22px;
-        bottom: 1%;
+        line-height: 28px;
+        height: 28px;
+        bottom: 2%;
     }
 
     div.letters {
         width: 95vw;
         grid-template-columns: repeat(8, 1fr);
+        top: 78%;
     }
 
     div.letters div {
@@ -245,5 +247,19 @@ div.show__text {
 
     div.show__text {
         font-size: 74px;
+    }
+}
+
+@media (max-width: 320px) {
+    div.counter {
+        transform: translate(-50%, 0%);
+        font-size: 16px;
+        line-height: 28px;
+        bottom: 1%;
+    }
+
+    div.letters div {
+        height: 48px;
+        line-height: 48px;
     }
 }
