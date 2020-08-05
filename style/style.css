@@ -10,9 +10,7 @@ body {
     background-color: rgb(216, 211, 211);
 }
 
-
 form {
-    min-width: 600px;
     padding-top: 5vh;
     width: 40vw;
     font-family: 'Architects Daughter', cursive;
@@ -45,7 +43,7 @@ form span {
 form button {
     margin-top: 4vh;
     width: 45%;
-    height: 7vh;
+    /* height: 7vh; */
     padding: 10px;
     font-size: 28px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -56,7 +54,6 @@ form button {
 }
 
 form button:hover {
-    font-size: 30px;
     letter-spacing: 3px;
 }
 
@@ -186,4 +183,67 @@ div.show__text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media(max-width:360px) {
+    form {
+        min-width: 80vw;
+        margin: 0 auto 5vh;
+
+    }
+
+    form span {
+        font-size: 22px;
+    }
+
+    form button.choice {
+        margin-top: 2vh;
+        font-size: 22px;
+
+    }
+
+    div.draw__word {
+        position: absolute;
+        top: 55%;
+        left: 0;
+        width: 100vw;
+    }
+
+    div.draw__word div span {
+        font-size: 32px;
+        font-weight: normal;
+
+    }
+
+    div.draw__word div {
+        padding-bottom: 3px;
+    }
+
+    div.counter {
+        transform: translate(-50%, -10%);
+        font-size: 20px;
+        line-height: 22px;
+        bottom: 1%;
+    }
+
+    div.letters {
+        width: 95vw;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    div.letters div {
+        font-size: 20px;
+    }
+
+    div.show {
+        width: 100vw;
+        top: 65%;
+        height: 28vh;
+
+
+    }
+
+    div.show__text {
+        font-size: 74px;
+    }
 }
