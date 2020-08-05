@@ -263,3 +263,76 @@ div.show__text {
         line-height: 48px;
     }
 }
+
+/* LANDSCAPE */
+
+
+@media (orientation:landscape) and (max-width:1024px) {
+    form {
+        min-width: 80vw;
+        margin: 0 auto 3vh;
+        padding-top: 2vh;
+
+    }
+
+    form span {
+        font-size: 20px;
+    }
+
+    form button.choice {
+        margin-top: 2vh;
+        font-size: 20px;
+        padding: 6px;
+
+    }
+
+    div.draw__word {
+        position: absolute;
+        top: 52%;
+        left: 0;
+        width: 100vw;
+    }
+
+    div.draw__word div span {
+        font-size: 32px;
+        font-weight: normal;
+
+    }
+
+    div.draw__word div {
+        padding-bottom: 3px;
+    }
+
+    div.counter {
+        transform: translate(-50%, -10%);
+        font-size: 20px;
+        line-height: 24px;
+        width: 40%;
+        bottom: 1%;
+    }
+
+    div.letters {
+        width: 95vw;
+        grid-template-columns: repeat(12, 1fr);
+        top: 78%;
+    }
+
+    div.letters div {
+        font-size: 20px;
+        height: 34px;
+        line-height: 34px;
+    }
+
+    div.show {
+        width: 100vw;
+        top: 65%;
+        height: 24vh;
+
+
+    }
+
+    div.show__text {
+        font-size: 52px;
+        width: 100%;
+    }
+}
